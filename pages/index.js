@@ -1,7 +1,8 @@
 import { Box } from 'theme-ui'
 import { Layout, Column, Heading, Row } from '@carbonplan/components'
+
+import Datasets from '../components/datasets'
 import datasets from '../datasets.json'
-import Dataset from '../components/dataset'
 
 const Main = () => {
   return (
@@ -27,9 +28,7 @@ const Main = () => {
             Navigation
           </Column>
           <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]}>
-            {datasets.map((d) => (
-              <Dataset key={d.name} />
-            ))}
+            <Datasets datasets={datasets} />
           </Column>
         </Row>
       </Box>

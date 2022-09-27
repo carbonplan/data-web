@@ -1,8 +1,77 @@
 [
   {
-    "name": "Forest risks"
+    "name": "Forest risks",
+    "color": "green",
+    "description": "Climate-driven risks from fire, drought, and insects to United States forests through the end of the 21st century.",
+    "tags": ["climate", "risks", "forests", "fire"],
+    "links": [
+      {
+        "label": "Browse map",
+        "href": "https://carbonplan.org/research/forest-risks"
+      },
+      {
+        "label": "Read article",
+        "href": "https://carbonplan.org/research/forest-risks-explainer"
+      },
+      {
+        "label": "Read publication",
+        "href": "https://doi.org/10.1111/ele.14018"
+      }
+    ],
+    "formats": [
+      {
+        "label": "Zarr",
+        "href": ""
+      },
+      {
+        "label": "CSV",
+        "href": ""
+      }
+    ],
+    "metadata": {
+      "release_date": "",
+      "license": "CC-BY-SA (subsets available under CC-BY",
+      "variables": [
+        "fraction burned / month",
+        "drought mortality",
+        "insect mortality"
+      ],
+      "spatial_coverage": "contiguous United States",
+      "spatial_resolution": "4 km",
+      "temporal_coverage": "1984-2018 (historical), 1970-2099 (simulation)",
+      "temporal_resolution": "monthly (fire), annual (drought, insects)"
+    }
   },
   {
-    "name": "CMIP6 downscaling"
+    "name": "CMIP6 downscaling",
+    "color": "pink",
+    "description": "Downscaled climate projections from the Coupled Model Intercomparison Project Phase 6 (CMIP6) for climate impacts analysis and planning.",
+    "tags": ["climate", "risks"],
+    "links": [
+      {
+        "label": "Browse map",
+        "href": ""
+      },
+      {
+        "label": "Read article",
+        "href": ""
+      }
+    ],
+    "formats": [
+      {
+        "label": "Zarr",
+        "href": ""
+      },
+      {
+        "label": "Zarr",
+        "href": "CSV"
+      }
+    ],
+    "metadata": {
+      "release_date": "03-30-2022",
+      "spatial_coverage": "Global",
+      "temporal_coverage": "1970-2100",
+      "license": ""
+    }
   }
 ]
