@@ -1,6 +1,7 @@
 import { Box } from 'theme-ui'
 import { Layout, Column, Heading, Row } from '@carbonplan/components'
-import data from '../data.json'
+import datasets from '../datasets.json'
+import Dataset from '../components/dataset'
 
 const Main = () => {
   return (
@@ -9,7 +10,7 @@ const Main = () => {
       description={'A catalog of datasets produced throughout our work.'}
       card={'https://images.carbonplan.org/social/research.png'}
       links={'local'}
-      metadata={`COUNT: ${data.length}`}
+      metadata={`COUNT: ${datasets.length}`}
       nav={'data'}
     >
       <Box>
@@ -26,7 +27,9 @@ const Main = () => {
             Navigation
           </Column>
           <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]}>
-            Content
+            {datasets.map((d) => (
+              <Dataset key={d.name} />
+            ))}
           </Column>
         </Row>
       </Box>
