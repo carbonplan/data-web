@@ -1,0 +1,46 @@
+{
+  "name": "data-catalog",
+  "version": "1.0.0",
+  "description": "directory of carbonplan data",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development next -p 4002",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbonplan/data-catalog.git"
+  },
+  "author": "carbonplan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carbonplan/data-catalog/issues"
+  },
+  "homepage": "https://github.com/carbonplan/data-catalog#readme",
+  "prettier": "@carbonplan/prettier",
+  "dependencies": {
+    "@carbonplan/components": "^11.8.1",
+    "@carbonplan/icons": "^1.0.0",
+    "@carbonplan/layouts": "^2.4.4",
+    "@carbonplan/theme": "^7.0.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@theme-ui/color": "^0.13.1",
+    "@theme-ui/core": "^0.13.1",
+    "@theme-ui/css": "^0.13.1",
+    "next": "^12.0.5",
+    "react": "^17.0.2",
+    "react-animate-height": "^2.0.23",
+    "react-dom": "^17.0.2",
+    "theme-ui": "^0.13.1"
+  },
+  "devDependencies": {
+    "@carbonplan/prettier": "^1.2.0",
+    "babel-jest": "^27.4.6",
+    "glob": "^7.1.7",
+    "prettier": "2.3.0"
+  }
+}
