@@ -1,9 +1,9 @@
-import { Column, LinkGroup, Row } from '@carbonplan/components'
+import { Badge, Column, LinkGroup, Row } from '@carbonplan/components'
 import { useBreakpointIndex } from '@theme-ui/match-media'
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 
 const Dataset = ({ dataset }) => {
-  const { name, description, color, links } = dataset
+  const { name, description, color, links, tags } = dataset
   return (
     <Box>
       <Box
@@ -11,8 +11,31 @@ const Dataset = ({ dataset }) => {
           backgroundColor: color,
           width: '100%',
           height: ['100px', '150px'],
+          position: 'relative',
         }}
-      />
+      >
+        <Box
+          sx={{ position: 'absolute', maxWidth: '65%', right: 2, bottom: 2 }}
+        >
+          <Flex
+            sx={{
+              columnGap: 2,
+              rowGap: 1,
+              flexWrap: 'wrap',
+              justifyContent: 'flex-end',
+            }}
+          >
+            {tags.map((tag) => (
+              <Badge
+                key={tag}
+                sx={{ textTransform: 'capitalize', opacity: 0.7 }}
+              >
+                {tag}
+              </Badge>
+            ))}
+          </Flex>
+        </Box>
+      </Box>
       <Box sx={{ fontSize: [3, 3, 4, 4], fontFamily: 'heading', my: 2 }}>
         {name}
       </Box>
