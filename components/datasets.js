@@ -1,9 +1,14 @@
-import { Badge, Column, LinkGroup, Row } from '@carbonplan/components'
+import { Badge, Column, Expander, LinkGroup, Row } from '@carbonplan/components'
 import { useBreakpointIndex } from '@theme-ui/match-media'
+import { useState } from 'react'
+import AnimateHeight from 'react-animate-height'
 import { Box, Flex } from 'theme-ui'
 
+import Metadata from './metadata'
+
 const Dataset = ({ dataset }) => {
-  const { name, description, color, links, tags } = dataset
+  const { name, description, color, links, tags, metadata } = dataset
+  const [expanded, setExpanded] = useState(false)
   return (
     <Box>
       <Box
@@ -14,28 +19,48 @@ const Dataset = ({ dataset }) => {
           position: 'relative',
         }}
       >
-        <Box
-          sx={{ position: 'absolute', maxWidth: '65%', right: 2, bottom: 2 }}
+        <Flex
+          sx={{
+            position: 'absolute',
+            maxWidth: '65%',
+            right: 2,
+            bottom: 2,
+            columnGap: 2,
+            rowGap: 1,
+            flexWrap: 'wrap',
+            justifyContent: 'flex-end',
+          }}
         >
-          <Flex
-            sx={{
-              columnGap: 2,
-              rowGap: 1,
-              flexWrap: 'wrap',
-              justifyContent: 'flex-end',
-            }}
-          >
-            {tags.map((tag) => (
-              <Badge
-                key={tag}
-                sx={{ textTransform: 'capitalize', opacity: 0.7 }}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </Flex>
-        </Box>
+          {tags.map((tag) => (
+            <Badge key={tag} sx={{ textTransform: 'capitalize', opacity: 0.7 }}>
+              {tag}
+            </Badge>
+          ))}
+        </Flex>
+        <Expander
+          sx={{
+            position: 'absolute',
+            bottom: 2,
+            left: 2,
+            stroke: 'primary',
+            '@media (hover: hover) and (pointer: fine)': {
+              '&:hover': {
+                fill: 'secondary',
+                stroke: 'secondary',
+              },
+            },
+          }}
+          value={expanded}
+          onClick={() => setExpanded(!expanded)}
+        />
       </Box>
+      <AnimateHeight
+        duration={100}
+        height={expanded ? 'auto' : 0}
+        easing={'linear'}
+      >
+        <Metadata color={color} metadata={metadata} />
+      </AnimateHeight>
       <Box sx={{ fontSize: [3, 3, 4, 4], fontFamily: 'heading', my: 2 }}>
         {name}
       </Box>
