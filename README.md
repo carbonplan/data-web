@@ -3,7 +3,7 @@
   height='48'
 />
 
-# carbonplan / data catalog
+# carbonplan / datasets
 
 **index of datasets produced by carbonplan**
 

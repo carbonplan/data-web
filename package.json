@@ -1,5 +1,5 @@
 {
-  "name": "data-catalog",
+  "name": "datasets",
   "version": "1.0.0",
   "description": "directory of carbonplan data",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carbonplan/data-catalog.git"
+    "url": "git+https://github.com/carbonplan/datasets.git"
   },
   "author": "carbonplan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/carbonplan/data-catalog/issues"
+    "url": "https://github.com/carbonplan/datasets/issues"
   },
-  "homepage": "https://github.com/carbonplan/data-catalog#readme",
+  "homepage": "https://github.com/carbonplan/datasets#readme",
   "prettier": "@carbonplan/prettier",
   "dependencies": {
     "@carbonplan/components": "^11.8.1",
