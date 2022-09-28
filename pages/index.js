@@ -1,10 +1,24 @@
+import { useCallback, useState } from 'react'
 import { Box } from 'theme-ui'
-import { Layout, Column, Heading, Row } from '@carbonplan/components'
+import { Layout, Column, Heading, Row, Input } from '@carbonplan/components'
 
 import Datasets from '../components/datasets'
 import datasets from '../datasets.json'
 
 const Main = () => {
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState(datasets)
+
+  const handleQueryChange = useCallback((e) => {
+    setQuery(e.target.value)
+    const regexp = new RegExp(e.target.value.trim(), 'i')
+    setResults(
+      datasets.filter(
+        (d) => d.name.match(regexp) || d.description.match(regexp)
+      )
+    )
+  }, [])
+
   return (
     <Layout
       title={'Datasets – CarbonPlan'}
@@ -25,10 +39,15 @@ const Main = () => {
 
         <Row>
           <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
-            Navigation
+            <Input
+              placeholder='Search'
+              value={query}
+              onChange={handleQueryChange}
+              sx={{ width: '100%' }}
+            />
           </Column>
           <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]}>
-            <Datasets datasets={datasets} />
+            <Datasets datasets={results} />
           </Column>
         </Row>
       </Box>
