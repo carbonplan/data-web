@@ -1,4 +1,12 @@
-import { Badge, Column, Expander, LinkGroup, Row } from '@carbonplan/components'
+import {
+  Badge,
+  Button,
+  Column,
+  Expander,
+  LinkGroup,
+  Row,
+} from '@carbonplan/components'
+import { Down } from '@carbonplan/icons'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
@@ -7,7 +15,7 @@ import { Box, Flex } from 'theme-ui'
 import Metadata from './metadata'
 
 const Dataset = ({ dataset }) => {
-  const { name, description, color, links, tags, metadata } = dataset
+  const { name, description, color, links, tags, metadata, formats } = dataset
   const [expanded, setExpanded] = useState(false)
   return (
     <Box>
@@ -64,9 +72,10 @@ const Dataset = ({ dataset }) => {
       <Box sx={{ fontSize: [3, 3, 4, 4], fontFamily: 'heading', my: 2 }}>
         {name}
       </Box>
-      <Box
+      <Flex
         sx={{
           color: color,
+          gap: 3,
           fontFamily: 'mono',
           letterSpacing: 'mono',
           textTransform: 'uppercase',
@@ -74,7 +83,23 @@ const Dataset = ({ dataset }) => {
         }}
       >
         Formats:
-      </Box>
+        {formats.map(({ label, href }) => (
+          <Button
+            key={label}
+            href={href}
+            sx={{
+              color,
+              fontFamily: 'mono',
+              letterSpacing: 'mono',
+              textTransform: 'uppercase',
+            }}
+            suffix={<Down />}
+            size='xs'
+          >
+            {label}
+          </Button>
+        ))}
+      </Flex>
       <Box sx={{ fontSize: [3, 3, 1, 1], mb: 3 }}>{description}</Box>
       <LinkGroup members={links} inverted />
     </Box>
