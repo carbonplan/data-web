@@ -1,23 +1,45 @@
-import { useCallback, useState } from 'react'
-import { Box } from 'theme-ui'
-import { Layout, Column, Heading, Row, Input } from '@carbonplan/components'
+import { useEffect, useState } from 'react'
+import { Box, Flex } from 'theme-ui'
+import {
+  Layout,
+  Column,
+  Heading,
+  Row,
+  Input,
+  Filter,
+} from '@carbonplan/components'
 
 import Datasets from '../components/datasets'
 import datasets from '../datasets.json'
 
+const INITIAL_TAGS = datasets.reduce((accum, d) => {
+  d.tags.forEach((tag) => (accum[tag] = true))
+  return accum
+}, {})
+
+const INITIAL_YEARS = datasets.reduce((accum, d) => {
+  accum[d.metadata.release_date.split('-')[2]] = true
+  return accum
+}, {})
+
 const Main = () => {
   const [query, setQuery] = useState('')
+  const [tags, setTags] = useState(INITIAL_TAGS)
+  const [years, setYears] = useState(INITIAL_YEARS)
   const [results, setResults] = useState(datasets)
 
-  const handleQueryChange = useCallback((e) => {
-    setQuery(e.target.value)
-    const regexp = new RegExp(e.target.value.trim(), 'i')
+  useEffect(() => {
+    const regexp = new RegExp(query.trim(), 'i')
+
     setResults(
       datasets.filter(
-        (d) => d.name.match(regexp) || d.description.match(regexp)
+        (d) =>
+          years[d.metadata.release_date.split('-')[2]] &&
+          d.tags.some((tag) => tags[tag]) &&
+          (d.name.match(regexp) || d.description.match(regexp))
       )
     )
-  }, [])
+  }, [query, tags, years])
 
   return (
     <Layout
@@ -39,12 +61,29 @@ const Main = () => {
 
         <Row>
           <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
-            <Input
-              placeholder='Search'
-              value={query}
-              onChange={handleQueryChange}
-              sx={{ width: '100%' }}
-            />
+            <Flex sx={{ flexDirection: 'column', gap: 6 }}>
+              <Input
+                placeholder='Search'
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                sx={{ width: '100%' }}
+              />
+
+              <Filter
+                label='Filter by tag'
+                values={tags}
+                setValues={setTags}
+                showAll
+                multiSelect
+              />
+              <Filter
+                label='Filter by release year'
+                values={years}
+                setValues={setYears}
+                showAll
+                multiSelect
+              />
+            </Flex>
           </Column>
           <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]}>
             <Datasets datasets={results} />
