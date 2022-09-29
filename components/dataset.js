@@ -9,7 +9,7 @@ import Metadata from './metadata'
 const Dataset = ({ dataset, printable = false }) => {
   const { name, description, image, color, links, tags, metadata, formats } =
     dataset
-  const [expanded, setExpanded] = useState(printable)
+  const [expanded, setExpanded] = useState(false)
   return (
     <Box>
       <Box
@@ -66,7 +66,13 @@ const Dataset = ({ dataset, printable = false }) => {
       >
         <Metadata color={color} metadata={metadata} />
       </AnimateHeight>
-      <Box sx={{ fontSize: [3, 3, 4, 4], fontFamily: 'heading', my: 2 }}>
+      <Box
+        sx={{
+          fontSize: printable ? 6 : [3, 3, 4, 4],
+          fontFamily: 'heading',
+          my: 2,
+        }}
+      >
         {name}
       </Box>
       <Flex
@@ -99,6 +105,20 @@ const Dataset = ({ dataset, printable = false }) => {
       </Flex>
       <Box sx={{ fontSize: [3, 3, 1, 1], mb: 3 }}>{description}</Box>
       <LinkGroup members={links} inverted />
+
+      <Box
+        sx={{
+          color: 'secondary',
+          textTransform: 'uppercase',
+          letterSpacing: 'smallcaps',
+          fontFamily: 'heading',
+          mt: 5,
+          mb: 2,
+        }}
+      >
+        Metadata
+      </Box>
+      {printable && <Metadata color={color} metadata={metadata} printable />}
     </Box>
   )
 }
