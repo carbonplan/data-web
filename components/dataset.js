@@ -7,15 +7,18 @@ import { Box, Flex } from 'theme-ui'
 import Metadata from './metadata'
 
 const Dataset = ({ dataset, printable = false }) => {
-  const { name, description, color, links, tags, metadata, formats } = dataset
+  const { name, description, image, color, links, tags, metadata, formats } =
+    dataset
   const [expanded, setExpanded] = useState(printable)
   return (
     <Box>
       <Box
         sx={{
           backgroundColor: color,
+          backgroundImage: `url(${image})`,
+          backgroundSize: 'cover',
           width: '100%',
-          height: ['100px', '150px'],
+          height: ['100px', '150px', '150px', '150px'],
           position: 'relative',
         }}
       >
