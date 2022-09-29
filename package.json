@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=development next -p 4002",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "print": "node print.js"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "@carbonplan/prettier": "^1.2.0",
     "babel-jest": "^27.4.6",
     "glob": "^7.1.7",
-    "prettier": "2.3.0"
+    "prettier": "2.3.0",
+    "puppeteer": "^18.0.5"
   }
 }
