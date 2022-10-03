@@ -1,3 +1,4 @@
+const fs = require('fs')
 const puppeteer = require('puppeteer')
 
 const baseUrl = process.env.PRINT_URL || 'http://localhost:4002'
@@ -24,4 +25,17 @@ async function writePDF() {
   await browser.close()
 }
 
+try {
+  console.log('removing old PDFs...')
+  fs.rmSync('pdfs/', { recursive: true })
+  console.log('removed.')
+} catch (e) {
+  console.log('no existing PDFs.')
+}
+console.log('creating new PDFs folder...')
+const result = fs.mkdirSync('pdfs/')
+console.log('created.')
+console.log('writing new files...')
 writePDF()
+  .then(() => console.log('done!'))
+  .catch((e) => console.log('errored', e))
