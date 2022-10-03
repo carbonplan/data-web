@@ -18,8 +18,8 @@ async function writePDF() {
 
   await page.pdf({
     path: `pdfs/CarbonPlan-Datasets-${formattedDate}.pdf`,
+    printBackground: true,
     format: 'letter',
-    margin: { bottom: 54, left: 54, right: 54, top: 54 },
   })
 
   await browser.close()
