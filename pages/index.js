@@ -13,10 +13,13 @@ import {
 import Datasets from '../components/datasets'
 import datasets from '../datasets.json'
 
-const INITIAL_TAGS = datasets.reduce((accum, d) => {
-  d.tags.forEach((tag) => (accum[tag] = true))
-  return accum
-}, {})
+const INITIAL_TAGS = datasets
+  .reduce((accum, d) => {
+    d.tags.forEach((tag) => !accum.includes(tag) && accum.push(tag))
+    return accum
+  }, [])
+  .sort()
+  .reduce((accum, tag) => ({ ...accum, [tag]: true }), {})
 
 const INITIAL_YEARS = datasets.reduce((accum, d) => {
   accum[d.metadata.release_date.split('-')[2]] = true
