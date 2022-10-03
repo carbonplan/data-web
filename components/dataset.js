@@ -11,7 +11,7 @@ const Dataset = ({ dataset, printable = false }) => {
     dataset
   const [expanded, setExpanded] = useState(false)
   return (
-    <Box>
+    <Box sx={{ mb: [5, 7, 6, 6] }}>
       <Box
         sx={{
           backgroundColor: color,
