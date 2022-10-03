@@ -20,7 +20,7 @@ const Metadata = ({ color, metadata, printable }) => {
   return (
     <Box
       sx={{
-        backgroundColor: alpha(color, 0.2),
+        backgroundColor: printable ? null : alpha(color, 0.2),
         fontSize: 0,
         fontFamily: 'mono',
         letterSpacing: 'mono',

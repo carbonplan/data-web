@@ -10,28 +10,33 @@ const Dataset = ({ dataset, printable = false }) => {
   const { name, description, image, color, links, tags, metadata, formats } =
     dataset
   const [expanded, setExpanded] = useState(false)
+
   return (
-    <Box sx={{ mb: [5, 7, 6, 6] }}>
+    <Box sx={{ width: '100%', mb: [5, 7, 6, 6] }}>
       <Box
         sx={{
           backgroundColor: color,
           backgroundImage: `url(${image})`,
           backgroundSize: 'cover',
           width: '100%',
-          height: ['100px', '150px', '150px', '150px'],
+          height: printable ? 0 : ['100px', '150px', '150px', '150px'],
           position: 'relative',
         }}
       >
         <Flex
           sx={{
-            position: 'absolute',
-            maxWidth: '65%',
-            right: 2,
-            bottom: 2,
+            ...(printable
+              ? {}
+              : {
+                  position: 'absolute',
+                  maxWidth: '65%',
+                  right: 2,
+                  bottom: 2,
+                  justifyContent: 'flex-end',
+                }),
             columnGap: 2,
             rowGap: 1,
             flexWrap: 'wrap',
-            justifyContent: 'flex-end',
           }}
         >
           {tags.map((tag) => (
@@ -70,7 +75,8 @@ const Dataset = ({ dataset, printable = false }) => {
         sx={{
           fontSize: printable ? 6 : [3, 3, 4, 4],
           fontFamily: 'heading',
-          my: 2,
+          mb: 2,
+          mt: printable ? 5 : 2,
         }}
       >
         {name}
