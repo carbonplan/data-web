@@ -1,10 +1,35 @@
-import { Badge, Button, Expander, LinkGroup } from '@carbonplan/components'
+import {
+  Badge,
+  Button,
+  Expander,
+  LinkGroup,
+  formatDate,
+} from '@carbonplan/components'
 import { Down } from '@carbonplan/icons'
 import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { Box, Flex } from 'theme-ui'
 
 import Metadata from './metadata'
+
+const Tags = ({ tags, sx }) => {
+  return (
+    <Flex
+      sx={{
+        columnGap: 2,
+        rowGap: 1,
+        flexWrap: 'wrap',
+        ...sx,
+      }}
+    >
+      {tags.map((tag) => (
+        <Badge key={tag} sx={{ textTransform: 'capitalize', opacity: 0.7 }}>
+          {tag}
+        </Badge>
+      ))}
+    </Flex>
+  )
+}
 
 const Dataset = ({ dataset, printable = false }) => {
   const { name, description, image, color, links, tags, metadata, formats } =
@@ -13,6 +38,38 @@ const Dataset = ({ dataset, printable = false }) => {
 
   return (
     <Box sx={{ width: '100%', mb: [5, 7, 6, 6] }}>
+      <Flex
+        sx={{
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          mb: 2,
+        }}
+      >
+        <Box
+          sx={{
+            color: 'secondary',
+            fontSize: 1,
+            fontFamily: 'mono',
+            letterSpacing: 'mono',
+            textTransform: 'uppercase',
+          }}
+        >
+          {printable ? 'released ' : null} {formatDate(metadata.release_date)}
+        </Box>
+
+        {printable && (
+          <Tags
+            tags={tags}
+            sx={{
+              maxWidth: '65%',
+              right: 2,
+              bottom: 2,
+              justifyContent: 'flex-end',
+            }}
+          />
+        )}
+      </Flex>
+
       <Box
         sx={{
           backgroundColor: color,
@@ -23,28 +80,19 @@ const Dataset = ({ dataset, printable = false }) => {
           position: 'relative',
         }}
       >
-        <Flex
-          sx={{
-            ...(printable
-              ? {}
-              : {
-                  position: 'absolute',
-                  maxWidth: '65%',
-                  right: 2,
-                  bottom: 2,
-                  justifyContent: 'flex-end',
-                }),
-            columnGap: 2,
-            rowGap: 1,
-            flexWrap: 'wrap',
-          }}
-        >
-          {tags.map((tag) => (
-            <Badge key={tag} sx={{ textTransform: 'capitalize', opacity: 0.7 }}>
-              {tag}
-            </Badge>
-          ))}
-        </Flex>
+        {!printable && (
+          <Tags
+            tags={tags}
+            sx={{
+              position: 'absolute',
+              maxWidth: '65%',
+              right: 2,
+              bottom: 2,
+              justifyContent: 'flex-end',
+            }}
+          />
+        )}
+
         {!printable && (
           <Expander
             sx={{

@@ -1,10 +1,9 @@
-import { Column, formatDate, Row } from '@carbonplan/components'
+import { Column, Row } from '@carbonplan/components'
 import { alpha } from '@theme-ui/color'
 import { Box } from 'theme-ui'
 
 const Metadata = ({ color, metadata, printable }) => {
   const rows = [
-    { label: 'Release date', key: 'release_date', formatter: formatDate },
     { label: 'License', key: 'license' },
     { label: 'Funding', key: 'funding' },
     {
