@@ -106,19 +106,23 @@ const Dataset = ({ dataset, printable = false }) => {
       <Box sx={{ fontSize: [3, 3, 1, 1], mb: 3 }}>{description}</Box>
       <LinkGroup members={links} inverted />
 
-      <Box
-        sx={{
-          color: 'secondary',
-          textTransform: 'uppercase',
-          letterSpacing: 'smallcaps',
-          fontFamily: 'heading',
-          mt: 5,
-          mb: 2,
-        }}
-      >
-        Metadata
-      </Box>
-      {printable && <Metadata color={color} metadata={metadata} printable />}
+      {printable && (
+        <>
+          <Box
+            sx={{
+              color: 'secondary',
+              textTransform: 'uppercase',
+              letterSpacing: 'smallcaps',
+              fontFamily: 'heading',
+              mt: 5,
+              mb: 2,
+            }}
+          >
+            Metadata
+          </Box>
+          <Metadata color={color} metadata={metadata} printable />
+        </>
+      )}
     </Box>
   )
 }
