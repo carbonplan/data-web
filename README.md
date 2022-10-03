@@ -37,6 +37,16 @@ npm run dev
 
 and then visit `http://localhost:4002/data` in your browser.
 
+## to build PDF version of the catalog
+
+Confirm that the development server is running and then run:
+
+```shell
+npm run print
+```
+
+You can then view the date-annotated PDF of the catalog in the `pdfs/` folder.
+
 ## license
 
 All the code in this repository is [MIT](https://choosealicense.com/licenses/mit/) licensed. When possible, the data is licensed using the [CC-BY-4.0](https://choosealicense.com/licenses/cc-by-4.0/) license. We include attribution and additional license information for third party datasets, and we request that you also maintain that attribution if using this data.
