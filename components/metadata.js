@@ -7,6 +7,11 @@ const Metadata = ({ color, metadata, printable }) => {
     { label: 'Release date', key: 'release_date', formatter: formatDate },
     { label: 'License', key: 'license' },
     { label: 'Funding', key: 'funding' },
+    {
+      label: 'Variables',
+      key: 'variables',
+      formatter: (vars) => vars.join(', '),
+    },
     { label: 'Spatial coverage', key: 'spatial_coverage' },
     { label: 'Spatial resolution', key: 'spatial_resolution' },
     { label: 'Temporal coverage', key: 'temporal_coverage' },

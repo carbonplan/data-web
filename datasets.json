@@ -71,9 +71,81 @@
     ],
     "metadata": {
       "release_date": "03-30-2022",
+      "license": "CC-BY-SA (subsets available under CC-BY)",
+      "variables": [
+        "minimum temperature",
+        "maximum temperature",
+        "precipitation"
+      ],
       "spatial_coverage": "Global",
+      "spatial resolution": "~25 km",
       "temporal_coverage": "1970-2100",
-      "license": "CC-BY-SA (subsets available under CC-BY)"
+      "temporal_resolution": "daily, plus monthly and annual aggregations"
+    }
+  },
+  {
+    "name": "Compliance users",
+    "color": "blue",
+    "description": "Harmonized linkages in public cap-and-trade data on carbon offset usage.",
+    "tags": ["offsets"],
+    "links": [
+      {
+        "label": "Web tool",
+        "href": "https://carbonplan.org/research/compliance-users"
+      },
+      {
+        "label": "Blog post",
+        "href": "https://carbonplan.org/blog/compliance-users-release"
+      }
+    ],
+    "formats": [
+      {
+        "label": "JSON",
+        "href": ""
+      }
+    ],
+    "metadata": {
+      "release_date": "01-05-2022",
+      "license": "CC-BY"
+    }
+  },
+  {
+    "name": "Biomass emissions",
+    "color": "green",
+    "description": "Annual CO₂ committed emissions due to forest losses (e.g. clearing, fires) from 2001-2020 globally.",
+    "tags": ["forests", "emissions"],
+    "links": [
+      {
+        "label": "Map tool",
+        "href": "https://carbonplan.org/research/forest-carbon"
+      },
+      {
+        "label": "Blog post",
+        "href": "https://carbonplan.org/blog/climate-trace-release"
+      },
+      {
+        "label": "Climate TRACE website",
+        "href": "https://www.climatetrace.org"
+      }
+    ],
+    "formats": [
+      {
+        "label": "Zarr",
+        "href": ""
+      },
+      {
+        "label": "CSV",
+        "href": ""
+      }
+    ],
+    "metadata": {
+      "release_date": "09-16-2021",
+      "license": "CC-BY 4.0",
+      "variables": ["annual CO₂ emissions"],
+      "spatial_coverage": "Global",
+      "spatial_resolution": "30 m, 3 km, country aggregates",
+      "temporal_coverage": "2001-2020",
+      "temporal_resolution": "annual"
     }
   }
 ]
