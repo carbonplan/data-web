@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Box, Flex } from 'theme-ui'
+import { Box, Flex, ThemeProvider } from 'theme-ui'
+import theme from '@carbonplan/theme'
 import {
   Layout,
   Column,
@@ -42,57 +43,59 @@ const Main = () => {
   }, [query, tags, years])
 
   return (
-    <Layout
-      title={'Datasets – CarbonPlan'}
-      description={'A catalog of datasets produced throughout our work.'}
-      card={'https://images.carbonplan.org/social/research.png'}
-      links={'local'}
-      metadata={`COUNT: ${datasets.length}`}
-      nav={'data'}
-    >
-      <Box>
-        <Heading
-          description={'A catalog of datasets produced throughout our work.'}
-          descriptionStart={[1, 4, 6, 6]}
-          descriptionWidth={[6, 5, 5, 5]}
-        >
-          Datasets
-        </Heading>
+    <ThemeProvider theme={theme}>
+      <Layout
+        title={'Datasets – CarbonPlan'}
+        description={'A catalog of datasets produced throughout our work.'}
+        card={'https://images.carbonplan.org/social/research.png'}
+        links={'local'}
+        metadata={`COUNT: ${datasets.length}`}
+        nav={'data'}
+      >
+        <Box>
+          <Heading
+            description={'A catalog of datasets produced throughout our work.'}
+            descriptionStart={[1, 4, 6, 6]}
+            descriptionWidth={[6, 5, 5, 5]}
+          >
+            Datasets
+          </Heading>
 
-        <Row>
-          <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
-            <Flex sx={{ flexDirection: 'column', gap: 6, mb: 5 }}>
-              <Input
-                placeholder='Search'
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                sx={{ width: '100%' }}
-              />
+          <Row>
+            <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
+              <Flex sx={{ flexDirection: 'column', gap: 6, mb: 5 }}>
+                <Input
+                  placeholder='Search'
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  sx={{ width: '100%' }}
+                />
 
-              <Filter
-                label='Filter by tag'
-                values={tags}
-                setValues={setTags}
-                sx={{ display: ['none', 'none', 'block', 'block'] }}
-                showAll
-                multiSelect
-              />
-              <Filter
-                label='Filter by release year'
-                values={years}
-                setValues={setYears}
-                sx={{ display: ['none', 'none', 'block', 'block'] }}
-                showAll
-                multiSelect
-              />
-            </Flex>
-          </Column>
-          <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]}>
-            <Datasets datasets={results} />
-          </Column>
-        </Row>
-      </Box>
-    </Layout>
+                <Filter
+                  label='Filter by tag'
+                  values={tags}
+                  setValues={setTags}
+                  sx={{ display: ['none', 'none', 'block', 'block'] }}
+                  showAll
+                  multiSelect
+                />
+                <Filter
+                  label='Filter by release year'
+                  values={years}
+                  setValues={setYears}
+                  sx={{ display: ['none', 'none', 'block', 'block'] }}
+                  showAll
+                  multiSelect
+                />
+              </Flex>
+            </Column>
+            <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]}>
+              <Datasets datasets={results} />
+            </Column>
+          </Row>
+        </Box>
+      </Layout>
+    </ThemeProvider>
   )
 }
 

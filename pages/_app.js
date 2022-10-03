@@ -4,11 +4,7 @@ import '@carbonplan/components/globals.css'
 import theme from '@carbonplan/theme'
 
 const App = ({ Component, pageProps }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  )
+  return <Component {...pageProps} />
 }
 
 export default App

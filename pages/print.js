@@ -1,16 +1,25 @@
+import { Box, Flex, ThemeProvider } from 'theme-ui'
+import theme from '@carbonplan/theme'
 import { formatDate } from '@carbonplan/components'
-import { Box, Flex } from 'theme-ui'
 
 import Dataset from '../components/dataset'
 import datasets from '../datasets.json'
 
 const PrintablePage = ({ children, sx }) => {
-  return <Flex sx={{ width: '100vw', height: '100vh', ...sx }}>{children}</Flex>
+  return (
+    <Flex sx={{ width: '100vw', height: '100vh', p: 54, ...sx }}>
+      {children}
+    </Flex>
+  )
 }
 
+const printTheme = {
+  ...theme,
+  config: { ...theme.config, printColorModeName: 'dark' },
+}
 const Print = () => {
   return (
-    <Box>
+    <ThemeProvider theme={printTheme}>
       <PrintablePage sx={{ alignItems: 'center' }}>
         <Box>
           <Box sx={{ fontFamily: 'heading', fontSize: 8, mb: 4 }}>
@@ -34,7 +43,7 @@ const Print = () => {
           <Dataset dataset={dataset} printable />
         </PrintablePage>
       ))}
-    </Box>
+    </ThemeProvider>
   )
 }
 
