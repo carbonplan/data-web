@@ -61,7 +61,7 @@ const Main = () => {
 
         <Row>
           <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
-            <Flex sx={{ flexDirection: 'column', gap: 6 }}>
+            <Flex sx={{ flexDirection: 'column', gap: 6, mb: 5 }}>
               <Input
                 placeholder='Search'
                 value={query}
@@ -73,6 +73,7 @@ const Main = () => {
                 label='Filter by tag'
                 values={tags}
                 setValues={setTags}
+                sx={{ display: ['none', 'none', 'block', 'block'] }}
                 showAll
                 multiSelect
               />
@@ -80,6 +81,7 @@ const Main = () => {
                 label='Filter by release year'
                 values={years}
                 setValues={setYears}
+                sx={{ display: ['none', 'none', 'block', 'block'] }}
                 showAll
                 multiSelect
               />
