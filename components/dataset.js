@@ -95,6 +95,7 @@ const Dataset = ({ dataset, printable = false }) => {
               fontFamily: 'mono',
               letterSpacing: 'mono',
               textTransform: 'uppercase',
+              flexShrink: 0,
             }}
             suffix={<Down />}
             size='xs'
