@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Box, Flex, ThemeProvider } from 'theme-ui'
 import theme from '@carbonplan/theme'
 import {
@@ -31,6 +31,7 @@ const Main = () => {
   const [tags, setTags] = useState(INITIAL_TAGS)
   const [years, setYears] = useState(INITIAL_YEARS)
   const [results, setResults] = useState(datasets)
+  const input = useRef(null)
 
   useEffect(() => {
     const regexp = new RegExp(query.trim(), 'i')
@@ -67,12 +68,20 @@ const Main = () => {
           <Row>
             <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
               <Flex sx={{ flexDirection: 'column', gap: 6, mb: 5 }}>
-                <Input
-                  placeholder='Search'
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  sx={{ width: '100%' }}
-                />
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    input.current.blur()
+                  }}
+                >
+                  <Input
+                    ref={input}
+                    placeholder='Search'
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    sx={{ width: '100%' }}
+                  />
+                </form>
 
                 <Filter
                   label='Filter by tag'
