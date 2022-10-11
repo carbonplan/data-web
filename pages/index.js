@@ -58,7 +58,12 @@ const Main = () => {
       >
         <Box>
           <Heading
-            description={<span>A catalog of public datasets <br/>produced throughout our work.</span>}
+            description={
+              <span>
+                A catalog of public datasets <br />
+                produced throughout our work.
+              </span>
+            }
             descriptionStart={[1, 4, 6, 6]}
             descriptionWidth={[6, 5, 5, 5]}
           >
@@ -80,7 +85,11 @@ const Main = () => {
                     value={query}
                     size='xs'
                     onChange={(e) => setQuery(e.target.value)}
-                    sx={{ width: '100%', fontFamily: 'faux', letterSpacing: 'faux' }}
+                    sx={{
+                      width: '100%',
+                      fontFamily: 'faux',
+                      letterSpacing: 'faux',
+                    }}
                   />
                 </form>
 
@@ -102,7 +111,11 @@ const Main = () => {
                 />
               </Flex>
             </Column>
-            <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]} sx={{mt: '2px'}}>
+            <Column
+              start={[1, 1, 5, 5]}
+              width={[6, 8, 7, 7]}
+              sx={{ mt: '2px' }}
+            >
               <Datasets datasets={results} />
             </Column>
           </Row>

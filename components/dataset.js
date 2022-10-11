@@ -131,8 +131,8 @@ const Dataset = ({ dataset, printable = false }) => {
               stroke: 'primary',
               '@media (hover: hover) and (pointer: fine)': {
                 '&:hover': {
-                  fill: tint(color,0.25),
-                  stroke: tint(color,0.25),
+                  fill: tint(color, 0.25),
+                  stroke: tint(color, 0.25),
                 },
               },
             }}

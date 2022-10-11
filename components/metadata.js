@@ -24,7 +24,7 @@ const Metadata = ({ color, metadata, printable }) => {
         fontFamily: 'mono',
         letterSpacing: 'mono',
         textTransform: 'uppercase',
-        py: [2]
+        py: [2],
       }}
     >
       {rows
