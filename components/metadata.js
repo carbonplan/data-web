@@ -20,24 +20,31 @@ const Metadata = ({ color, metadata, printable }) => {
     <Box
       sx={{
         backgroundColor: printable ? null : alpha(color, 0.2),
-        fontSize: 0,
+        fontSize: printable ? 1 : 0,
         fontFamily: 'mono',
         letterSpacing: 'mono',
         textTransform: 'uppercase',
+        py: [2],
+        pb: [3],
+        mt: printable ? 5 : 0,
       }}
     >
       {rows
         .filter((row) => metadata[row.key])
         .map(({ key, label, formatter }) => (
-          <Row key={key} columns={[6, 8, 3, 3]} sx={{ py: 2 }}>
+          <Row
+            key={key}
+            columns={[6, 8, 3, 3]}
+            sx={{ py: [3, 3, 3, 3], px: printable ? 0 : 3 }}
+          >
             <Column
               start={1}
               width={[2, 2, 1, 1]}
               sx={{ color, ml: printable ? 0 : 2 }}
             >
-              {label}:
+              {label}
             </Column>
-            <Column start={[3, 3, 2, 2]} width={[4, 6, 2, 2]}>
+            <Column start={[3, 3, 2, 2]} width={[3, 6, 2, 2]}>
               {formatter ? formatter(metadata[key]) : metadata[key]}
             </Column>
           </Row>

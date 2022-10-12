@@ -4,7 +4,7 @@
     "color": "pink",
     "description": "Downscaled climate projections from the Coupled Model Intercomparison Project Phase 6 (CMIP6) for climate impacts analysis and planning.",
     "tags": ["climate", "risks"],
-    "image": "https://images.carbonplan.org/highlights/cmip6-downscaling-dark.png",
+    "image": "https://images.carbonplan.org/datasets/cmip6-downscaling-darker.png",
     "links": [
       {
         "label": "Browse map",
@@ -27,7 +27,7 @@
     ],
     "metadata": {
       "release_date": "03-30-2022",
-      "license": "CC-BY-SA (subsets available under CC-BY)",
+      "license": "CC BY 4.0",
       "variables": [
         "minimum temperature",
         "maximum temperature",
@@ -44,6 +44,7 @@
     "color": "blue",
     "description": "Harmonized linkages in public cap-and-trade data on carbon offset usage.",
     "tags": ["offsets"],
+    "image": "https://images.carbonplan.org/datasets/compliance-users-darker.png",
     "links": [
       {
         "label": "Web tool",
@@ -62,14 +63,15 @@
     ],
     "metadata": {
       "release_date": "01-05-2022",
-      "license": "CC-BY"
+      "license": "CC BY 4.0"
     }
   },
   {
-    "name": "Biomass emissions",
+    "name": "Forest carbon",
     "color": "green",
     "description": "Annual CO₂ committed emissions due to forest losses (e.g. clearing, fires) from 2001-2020 globally.",
     "tags": ["forests", "emissions"],
+    "image": "https://images.carbonplan.org/datasets/forest-carbon.png",
     "links": [
       {
         "label": "Map tool",
@@ -96,7 +98,7 @@
     ],
     "metadata": {
       "release_date": "09-16-2021",
-      "license": "CC-BY 4.0",
+      "license": "CC BY 4.0",
       "variables": ["annual CO₂ emissions"],
       "spatial_coverage": "Global",
       "spatial_resolution": "30 m, 3 km, country aggregates",
@@ -109,7 +111,7 @@
     "color": "red",
     "description": "Climate-driven risks from fire, drought, and insects to United States forests through the end of the 21st century.",
     "tags": ["climate", "risks", "forests", "fire"],
-    "image": "https://images.carbonplan.org/articles/009/forest-fire-red.png",
+    "image": "https://images.carbonplan.org/datasets/forest-risks.png",
     "links": [
       {
         "label": "Browse map",
@@ -136,7 +138,7 @@
     ],
     "metadata": {
       "release_date": "05-21-2021",
-      "license": "CC-BY-SA (subsets available under CC-BY)",
+      "license": "CC BY 4.0",
       "variables": [
         "fraction burned / month",
         "drought mortality",
