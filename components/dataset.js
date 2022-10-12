@@ -28,7 +28,7 @@ const Tags = ({ tags, sx }) => {
           key={tag}
           sx={{
             fontSize: [1],
-            height: ['22px'],
+            height: ['21px'],
             textTransform: 'uppercase',
             fontFamily: 'mono',
             letterSpacing: 'mono',
@@ -85,7 +85,7 @@ const Dataset = ({ dataset, printable = false }) => {
         sx={{
           backgroundColor: color,
           width: '100%',
-          height: printable ? 0 : ['100px', '150px', '150px', '150px'],
+          height: printable ? 0 : ['125px', '150px', '150px', '150px'],
           position: 'relative',
         }}
       >
@@ -150,9 +150,10 @@ const Dataset = ({ dataset, printable = false }) => {
       </AnimateHeight>
       <Box
         sx={{
-          fontSize: printable ? 6 : [3, 3, 4, 4],
+          fontSize: printable ? 6 : [4, 4, 4, 4],
           fontFamily: 'heading',
           mb: 2,
+          pt: ['2px'],
           mt: printable ? 5 : 2,
         }}
       >
@@ -194,23 +195,11 @@ const Dataset = ({ dataset, printable = false }) => {
           </Button>
         ))}
       </Flex>
-      <Box sx={{ fontSize: [3, 3, 2, 2], mb: 2, py: [1] }}>{description}</Box>
+      <Box sx={{ fontSize: [2, 2, 2, 2], mb: 2, py: [1] }}>{description}</Box>
       <LinkGroup members={links} inverted />
 
       {printable && (
         <>
-          <Box
-            sx={{
-              color: 'secondary',
-              textTransform: 'uppercase',
-              letterSpacing: 'smallcaps',
-              fontFamily: 'heading',
-              mt: 5,
-              mb: 2,
-            }}
-          >
-            Metadata
-          </Box>
           <Metadata color={color} metadata={metadata} printable />
         </>
       )}

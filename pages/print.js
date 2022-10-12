@@ -22,7 +22,14 @@ const Print = () => {
     <ThemeProvider theme={printTheme}>
       <PrintablePage sx={{ alignItems: 'center' }}>
         <Box>
-          <Box sx={{ fontFamily: 'heading', fontSize: 8, mb: 4 }}>
+          <Box
+            sx={{
+              fontFamily: 'heading',
+              lineHeight: 'heading',
+              fontSize: 8,
+              mb: 4,
+            }}
+          >
             CarbonPlan - Datasets
           </Box>
           <Box
