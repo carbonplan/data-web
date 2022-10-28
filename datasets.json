@@ -8,21 +8,21 @@
     "links": [
       {
         "label": "Browse map",
-        "href": ""
+        "href": "https://carbonplan.org/research/cmip6-downscaling"
       },
       {
         "label": "Read article",
-        "href": ""
+        "href": "https://carbonplan.org/research/cmip6-downscaling-explainer"
       }
     ],
     "formats": [
       {
         "label": "Zarr",
-        "href": ""
+        "href": "https://github.com/carbonplan/cmip6-downscaling/blob/main/datasets.md"
       },
       {
         "label": "CSV",
-        "href": ""
+        "href": "https://carbonplan-datasette.fly.dev/cmip6-downscaling"
       }
     ],
     "metadata": {
@@ -58,7 +58,7 @@
     "formats": [
       {
         "label": "JSON",
-        "href": ""
+        "href": "https://raw.githubusercontent.com/carbonplan/compliance-users/main/data/outputs/user_data_v1.0.json"
       }
     ],
     "metadata": {
@@ -89,10 +89,6 @@
     "formats": [
       {
         "label": "Zarr",
-        "href": ""
-      },
-      {
-        "label": "CSV",
         "href": ""
       }
     ],
@@ -130,10 +126,6 @@
       {
         "label": "Zarr",
         "href": ""
-      },
-      {
-        "label": "CSV",
-        "href": ""
       }
     ],
     "metadata": {
@@ -148,6 +140,37 @@
       "spatial_resolution": "4 km",
       "temporal_coverage": "1984-2018 (historical), 1970-2099 (simulation)",
       "temporal_resolution": "monthly (fire), annual (drought, insects)"
+    }
+  },
+  {
+    "name": "CDR database",
+    "color": "grey",
+    "description": "Analysis of 200+ public carbon dioxide removal project proposals from 2020 and 2021. No longer updated as of 2022.",
+    "tags": ["offsets", "cdr"],
+    "image": "https://images.carbonplan.org/datasets/cdr-database.png",
+    "links": [
+      {
+        "label": "Web tool",
+        "href": "https://carbonplan.org/research/cdr-database"
+      },
+      {
+        "label": "Blog post",
+        "href": "https://carbonplan.org/blog/cdr-database-archived"
+      }
+    ],
+    "formats": [
+      {
+        "label": "JSON",
+        "href": "https://carbonplan.org/research/cdr-database/projects.json"
+      },
+      {
+        "label": "CSV",
+        "href": "https://carbonplan.org/research/cdr-database/projects.csv"
+      }
+    ],
+    "metadata": {
+      "release_date": "05-26-2021",
+      "license": "CC BY 4.0"
     }
   }
 ]
