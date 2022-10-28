@@ -25,7 +25,7 @@ const Metadata = ({ color, metadata, printable }) => {
         letterSpacing: 'mono',
         textTransform: 'uppercase',
         py: [2],
-        pb: [3],
+        pb: [2],
         mt: printable ? 5 : 0,
       }}
     >
