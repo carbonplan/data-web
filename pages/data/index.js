@@ -51,7 +51,6 @@ const Main = () => {
       <Layout
         title={'Datasets – CarbonPlan'}
         description={'A catalog of datasets produced throughout our work.'}
-        card={'https://images.carbonplan.org/social/research.png'}
         links={'local'}
         metadata={`COUNT: ${datasets.length}`}
         nav={'data'}
