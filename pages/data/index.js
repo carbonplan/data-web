@@ -10,8 +10,8 @@ import {
   Filter,
 } from '@carbonplan/components'
 
-import Datasets from '../components/datasets'
-import datasets from '../datasets.json'
+import Datasets from '../../components/datasets'
+import datasets from '../../datasets.json'
 
 const INITIAL_TAGS = datasets
   .reduce((accum, d) => {
