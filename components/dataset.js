@@ -5,7 +5,7 @@ import {
   LinkGroup,
   formatDate,
 } from '@carbonplan/components'
-import { Down } from '@carbonplan/icons'
+import { Down, RotatingArrow } from '@carbonplan/icons'
 import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { Box, Flex } from 'theme-ui'
@@ -169,7 +169,7 @@ const Dataset = ({ dataset, printable = false }) => {
           mb: 2,
         }}
       >
-        {formats.map(({ label, href }) => (
+        {formats.map(({ label, href, type }) => (
           <Button
             key={label}
             href={href}
@@ -181,13 +181,23 @@ const Dataset = ({ dataset, printable = false }) => {
               flexShrink: 0,
             }}
             suffix={
-              <Down
-                sx={{
-                  width: ['13px', '13px', '13px', '14px'],
-                  height: ['13px', '13px', '13px', '14px'],
-                  mt: ['-3px', '-3px', '-3px', '-4px'],
-                }}
-              />
+              type === 'download' ? (
+                <Down
+                  sx={{
+                    width: ['13px', '13px', '13px', '14px'],
+                    height: ['13px', '13px', '13px', '14px'],
+                    mt: ['-3px', '-3px', '-3px', '-4px'],
+                  }}
+                />
+              ) : (
+                <RotatingArrow
+                  sx={{
+                    width: ['13px', '13px', '13px', '14px'],
+                    height: ['13px', '13px', '13px', '14px'],
+                    mt: ['-3px', '-3px', '-3px', '-4px'],
+                  }}
+                />
+              )
             }
             size='xs'
           >

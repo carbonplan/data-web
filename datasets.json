@@ -18,11 +18,13 @@
     "formats": [
       {
         "label": "Zarr",
-        "href": "https://github.com/carbonplan/cmip6-downscaling/blob/main/datasets.md"
+        "href": "https://github.com/carbonplan/cmip6-downscaling/blob/main/datasets.md",
+        "type": "link"
       },
       {
         "label": "CSV",
-        "href": "https://carbonplan-datasette.fly.dev/cmip6-downscaling"
+        "href": "https://github.com/carbonplan/cmip6-downscaling/blob/main/datasets.md",
+        "type": "link"
       }
     ],
     "metadata": {
@@ -58,7 +60,8 @@
     "formats": [
       {
         "label": "JSON",
-        "href": "https://raw.githubusercontent.com/carbonplan/compliance-users/main/data/outputs/user_data_v1.0.json"
+        "href": "https://raw.githubusercontent.com/carbonplan/compliance-users/main/data/outputs/user_data_v1.0.json",
+        "type": "download"
       }
     ],
     "metadata": {
@@ -89,7 +92,8 @@
     "formats": [
       {
         "label": "Zarr",
-        "href": ""
+        "href": "https://github.com/carbonplan/trace/blob/main/datasets.md",
+        "type": "link"
       }
     ],
     "metadata": {
@@ -125,7 +129,8 @@
     "formats": [
       {
         "label": "Zarr",
-        "href": ""
+        "href": "https://github.com/carbonplan/forest-risks/blob/main/datasets.md",
+        "type": "link"
       }
     ],
     "metadata": {
@@ -161,11 +166,13 @@
     "formats": [
       {
         "label": "JSON",
-        "href": "https://carbonplan.org/research/cdr-database/projects.json"
+        "href": "https://carbonplan.org/research/cdr-database/projects.json",
+        "type": "download"
       },
       {
         "label": "CSV",
-        "href": "https://carbonplan.org/research/cdr-database/projects.csv"
+        "href": "https://carbonplan.org/research/cdr-database/projects.csv",
+        "type": "download"
       }
     ],
     "metadata": {
