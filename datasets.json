@@ -92,7 +92,7 @@
     "formats": [
       {
         "label": "Zarr",
-        "href": "https://github.com/carbonplan/trace/blob/main/datasets.md",
+        "href": "https://github.com/carbonplan/trace/blob/main/carbonplan_trace/v0/data/README.md",
         "type": "link"
       }
     ],
