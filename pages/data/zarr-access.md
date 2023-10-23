@@ -3,7 +3,7 @@ import Section from '../../components/section'
 
 # Zarr
 
-We prefer the Zarr data format for storing our raster data products because it's simple, transparent, open, community-driven, and optimized for the cloud.
+We prefer the Zarr data format for storing our raster data products because it's simple, open, community-driven, and optimized for the cloud.
 
 Here's a code snippet showing how to open one of our Zarr stores from the [cmip6-downscaling](https://github.com/carbonplan/cmip6-downscaling) project using the [Xarray](https://docs.xarray.dev/en/stable/) Python library:
 
