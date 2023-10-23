@@ -1,4 +1,5 @@
 import { Link } from '@carbonplan/components'
+import Section from '../../components/section'
 
 # Zarr
 
@@ -18,3 +19,5 @@ If you need a local copy of the dataset in a single file, you could write out th
 Note that, unlike with a CSV file, you can't directly download Zarr data by clicking on a URL. A link to a Zarr store must be read by a program like the example above, and clicking on Zarr link in a web browser will result in an error message.
 
 If you have any feedback about the accessibility of our data products, please reach out via <Link href='mailto:hello@carbonplan.org'>hello@carbonplan.org</Link>.
+
+export default ({ children }) => <Section>{children}</Section>

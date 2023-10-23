@@ -29,7 +29,7 @@
     "@emotion/styled": "^11.6.0",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
-    "@next/mdx": "^13.5.6",
+    "@next/mdx": "^12.3.1",
     "@theme-ui/color": "^0.15.3",
     "@theme-ui/core": "^0.15.3",
     "@theme-ui/css": "^0.15.3",
