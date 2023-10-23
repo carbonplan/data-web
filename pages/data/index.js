@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Box, Flex, ThemeProvider } from 'theme-ui'
-import theme from '@carbonplan/theme'
+import { Box, Flex } from 'theme-ui'
 import {
   Layout,
   Column,
@@ -47,80 +46,74 @@ const Main = () => {
   }, [query, tags, years])
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout
-        title={'Datasets – CarbonPlan'}
-        description={'A catalog of datasets produced throughout our work.'}
-        links={'local'}
-        metadata={`COUNT: ${datasets.length}`}
-        nav={'data'}
-      >
-        <Box>
-          <Heading
-            description={
-              <span>
-                A catalog of public datasets <br />
-                produced throughout our work.
-              </span>
-            }
-            descriptionStart={[1, 4, 6, 6]}
-            descriptionWidth={[6, 5, 5, 5]}
-          >
-            Datasets
-          </Heading>
+    <Layout
+      title={'Datasets – CarbonPlan'}
+      description={'A catalog of datasets produced throughout our work.'}
+      links={'local'}
+      metadata={`COUNT: ${datasets.length}`}
+      nav={'data'}
+    >
+      <Box>
+        <Heading
+          description={
+            <span>
+              A catalog of public datasets <br />
+              produced throughout our work.
+            </span>
+          }
+          descriptionStart={[1, 4, 6, 6]}
+          descriptionWidth={[6, 5, 5, 5]}
+        >
+          Datasets
+        </Heading>
 
-          <Row>
-            <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
-              <Flex sx={{ flexDirection: 'column', gap: 6, mb: 5 }}>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    input.current.blur()
+        <Row>
+          <Column start={[1, 1, 2, 2]} width={[6, 8, 2, 2]}>
+            <Flex sx={{ flexDirection: 'column', gap: 6, mb: 5 }}>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  input.current.blur()
+                }}
+              >
+                <Input
+                  ref={input}
+                  placeholder='Search'
+                  value={query}
+                  size='xs'
+                  onChange={(e) => setQuery(e.target.value)}
+                  sx={{
+                    width: '100%',
+                    fontFamily: 'faux',
+                    letterSpacing: 'faux',
                   }}
-                >
-                  <Input
-                    ref={input}
-                    placeholder='Search'
-                    value={query}
-                    size='xs'
-                    onChange={(e) => setQuery(e.target.value)}
-                    sx={{
-                      width: '100%',
-                      fontFamily: 'faux',
-                      letterSpacing: 'faux',
-                    }}
-                  />
-                </form>
+                />
+              </form>
 
-                <Filter
-                  label='Filter by tag'
-                  values={tags}
-                  setValues={setTags}
-                  sx={{ display: ['none', 'none', 'block', 'block'] }}
-                  showAll
-                  multiSelect
-                />
-                <Filter
-                  label='Filter by release year'
-                  values={years}
-                  setValues={setYears}
-                  sx={{ display: ['none', 'none', 'block', 'block'] }}
-                  showAll
-                  multiSelect
-                />
-              </Flex>
-            </Column>
-            <Column
-              start={[1, 1, 5, 5]}
-              width={[6, 8, 7, 7]}
-              sx={{ mt: '2px' }}
-            >
-              <Datasets datasets={results} />
-            </Column>
-          </Row>
-        </Box>
-      </Layout>
-    </ThemeProvider>
+              <Filter
+                label='Filter by tag'
+                values={tags}
+                setValues={setTags}
+                sx={{ display: ['none', 'none', 'block', 'block'] }}
+                showAll
+                multiSelect
+              />
+              <Filter
+                label='Filter by release year'
+                values={years}
+                setValues={setYears}
+                sx={{ display: ['none', 'none', 'block', 'block'] }}
+                showAll
+                multiSelect
+              />
+            </Flex>
+          </Column>
+          <Column start={[1, 1, 5, 5]} width={[6, 8, 7, 7]} sx={{ mt: '2px' }}>
+            <Datasets datasets={results} />
+          </Column>
+        </Row>
+      </Box>
+    </Layout>
   )
 }
 
