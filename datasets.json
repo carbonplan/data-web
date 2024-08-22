@@ -179,5 +179,74 @@
       "release_date": "05-26-2021",
       "license": "CC BY 4.0"
     }
+  },
+  {
+    "name": "Extreme heat",
+    "color": "purple",
+    "description": "Data and analysis on extreme heat under a changing climate.",
+    "tags": ["climate", "risks"],
+    "image": "https://images.carbonplan.org/highlights/extreme-heat-dark.png",
+    "links": [
+      {
+        "label": "Read article",
+        "href": "https://carbonplan.org/research/extreme-heat-explainer"
+      }
+    ],
+  
+    
+    "formats": [
+      {
+        "label": "Zarr & CSV",
+        "href": "https://github.com/carbonplan/extreme-heat?tab=readme-ov-file#data",
+        "type": "link"
+      }
+    ],
+    "metadata": {
+      "release_date": "09-05-2023",
+      "license": "CC BY 4.0",
+      "variables": [
+        "WBGT"
+      ],
+      "spatial_coverage": "Global"
+    }
+  },
+  {
+    "name": "Offsets DB",
+    "color": "orange",
+    "description": "Database of offset projects and offset credits issued.",
+    "tags": ["offsets"],
+    "image": "https://images.carbonplan.org/highlights/offsets-db-dark.png",
+    "links": [
+      {
+        "label": "Web tool",
+        "href": "https://carbonplan.org/research/offsets-db"
+      },
+      {
+        "label": "Read article",
+        "href": "https://carbonplan.org/research/offsets-db-explainer"
+      }
+    ],
+    "formats": [
+      {
+        "label": "JSON",
+        "href": "https://carbonplan-offsets-db.s3.us-west-2.amazonaws.com/production/latest/offsets-db.csv.zip",
+        "type": "download"
+      },
+      {
+        "label": "PARQUET",
+        "href": "https://carbonplan-offsets-db.s3.us-west-2.amazonaws.com/production/latest/offsets-db.parquet.zip",
+        "type": "download"
+      }
+    ],
+    "metadata": {
+      "release_date": "03-08-2024",
+      "license": "Multiple",
+      "href": "https://github.com/carbonplan/offsets-db-data/blob/main/TERMS_OF_DATA_ACCESS"
+    }
   }
+
 ]
+
+
+
+
