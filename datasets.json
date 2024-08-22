@@ -1,7 +1,7 @@
 [
   {
-    "name": "Offsets DB",
-    "color": "blue",
+    "name": "OffsetsDB",
+    "color": "red",
     "description": "Database of offset projects and offset credits issued.",
     "tags": ["offsets"],
     "image": "https://images.carbonplan.org/highlights/offsets-db-dark.png",
@@ -17,7 +17,7 @@
     ],
     "formats": [
       {
-        "label": "JSON",
+        "label": "CSV",
         "href": "https://carbonplan-offsets-db.s3.us-west-2.amazonaws.com/production/latest/offsets-db.csv.zip",
         "type": "download"
       },
@@ -35,7 +35,7 @@
   },
   {
     "name": "Extreme heat",
-    "color": "pink",
+    "color": "gray",
     "description": "Data and analysis on extreme heat under a changing climate.",
     "tags": ["climate", "risks"],
     "image": "https://images.carbonplan.org/highlights/extreme-heat-dark.png",
