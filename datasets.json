@@ -192,8 +192,7 @@
         "href": "https://carbonplan.org/research/extreme-heat-explainer"
       }
     ],
-  
-    
+
     "formats": [
       {
         "label": "Zarr & CSV",
@@ -204,9 +203,7 @@
     "metadata": {
       "release_date": "09-05-2023",
       "license": "CC BY 4.0",
-      "variables": [
-        "WBGT"
-      ],
+      "variables": ["WBGT"],
       "spatial_coverage": "Global"
     }
   },
@@ -244,9 +241,4 @@
       "href": "https://github.com/carbonplan/offsets-db-data/blob/main/TERMS_OF_DATA_ACCESS"
     }
   }
-
 ]
-
-
-
-
