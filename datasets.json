@@ -225,7 +225,7 @@
     ],
     "formats": [
       {
-        "label": "JSON",
+        "label": "CSV",
         "href": "https://carbonplan-offsets-db.s3.us-west-2.amazonaws.com/production/latest/offsets-db.csv.zip",
         "type": "download"
       },
