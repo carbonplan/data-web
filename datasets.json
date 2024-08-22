@@ -208,7 +208,7 @@
     }
   },
   {
-    "name": "Offsets DB",
+    "name": "OffsetsDB",
     "color": "blue",
     "description": "Database of offset projects and offset credits issued.",
     "tags": ["offsets"],
