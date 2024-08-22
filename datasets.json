@@ -182,7 +182,7 @@
   },
   {
     "name": "Extreme heat",
-    "color": "purple",
+    "color": "pink",
     "description": "Data and analysis on extreme heat under a changing climate.",
     "tags": ["climate", "risks"],
     "image": "https://images.carbonplan.org/highlights/extreme-heat-dark.png",
@@ -209,7 +209,7 @@
   },
   {
     "name": "Offsets DB",
-    "color": "orange",
+    "color": "blue",
     "description": "Database of offset projects and offset credits issued.",
     "tags": ["offsets"],
     "image": "https://images.carbonplan.org/highlights/offsets-db-dark.png",
