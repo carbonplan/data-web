@@ -1,5 +1,4 @@
 import React from 'react'
-import PlausibleProvider from 'next-plausible'
 import { ThemeProvider } from 'theme-ui'
 import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
@@ -11,13 +10,19 @@ const App = ({ Component, pageProps }) => {
   const componentsWithStyles = useThemedStylesWithMdx(useMDXComponents())
 
   return (
-    <PlausibleProvider domain='carbonplan.org'>
-      <ThemeProvider theme={theme}>
-        <MDXProvider components={componentsWithStyles}>
-          <Component {...pageProps} />
-        </MDXProvider>
-      </ThemeProvider>
-    </PlausibleProvider>
+    <ThemeProvider theme={theme}>
+      {process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' && (
+        <Script
+          strategy='lazyOnload'
+          data-domain='carbonplan.org'
+          data-api='https://carbonplan.org/proxy/api/event'
+          src='https://carbonplan.org/js/script.js'
+        />
+      )}
+      <MDXProvider components={componentsWithStyles}>
+        <Component {...pageProps} />
+      </MDXProvider>
+    </ThemeProvider>
   )
 }
 
